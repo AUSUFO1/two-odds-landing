@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/* Tailwind v4 theme tokens */
+@theme {
+  --color-regal-navy: var(--regal-navy);
+  --color-dark-blue: var(--dark-blue);
+  --color-gold: var(--gold);
+  --color-lavender: var(--lavender);
+}
+
+/* ------------------------------
+   BASE GLOBAL STYLES
+   ------------------------------ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --regal-navy: #003C6F;
+  --dark-blue: #01294A;
+
+  /* Buttons */
+  --gold: #FFA500;
+  --lavender: #ABB2FA;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--regal-navy);
+  color: white;
+  font-family: var(--font-poppins), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   CUSTOM COMPONENTS
+   ------------------------------ */
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background-color: var(--gold);
+  color: #03101F;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 165, 0, 0.85); /* RGBA hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 165, 0, 0.45);
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  background-color: var(--lavender);
+  color: #03101F;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(171, 178, 250, 0.85); /* RGBA hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(171, 178, 250, 0.45);
+}
+
+/* CARD */
+.card {
+  background-color: var(--dark-blue);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTAINER */
+.container-custom {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* SECTION SPACING */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* SCROLLBAR */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e59400;
 }

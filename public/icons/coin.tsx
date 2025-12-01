@@ -1,0 +1,20 @@
+import * as React from "react";
+
+const Coin = (props) => (
+  <svg
+    width={60}
+    height={60}
+    viewBox="0 0 60 60"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <image
+      width={60}
+      height={60}
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiUlEQVR4nO2aPYgUSRTH+8APEEwUxGVFUDwVBLlANBTBRARRFj00UbhDBb8QRc1GMBPdD2boer/qjVdYEwNR18DgEj119+6C44T1ksvED/ATv3CO57QwtLO601Xd08P2H14yU9NvflXVVe+9qiAoVapUqVIzVLVabTGwBxgCxkRkEngGvI/tWfzZmLYxxuzW3wTdpGq1uhA4CtwD6mlMRO6KyBF9VlBUWWuXiMgg8DotaAvwV8CAMaY3KIqA2cAx4KUv0BamnXh2aGhobkdhwzBcBfyZIWhyxP+w1q7oCCzQl/GoTgX9wlq7I1dYa+0+4EPesE3QH0XkYC6wwIFOgbYAP5I1bJ/2bqdBm0ca2J4JbBRFK4DnnYZsYbqOrPYKOzo6OsfXapx8tifoCd0evQEDZ3yNSEbAaie9wBpjeuOIp+jAOrV7nIGlES7WuwBY7aKPROC1L7hWGh4enh9F0VrdYoC/XYB1JjolHNL4E95G83uqVCqzPMyow6mBcUjx0gCr6vX6D8BNB7+/p4XtEZFPnt/XERG5rxZ35hVgr0Im2m11mNafwjBc1DawMWa349T6CliznSnaHk/47nV8l39uG5hGWSYXYBH5rUXa6eJ7IA3wWI7Al5rbGWN+cfR9PQ3wvzkBa1i4tHmbAv5znNKTbQOLyFPfwMAGYHNsm5LVC2vtGhH5y9Uv8CQN8DvfwN8SsAW45Sn9fFt44C/SqAv4pxPATzOY0lfjteGzxe/0iE71RLse4JGD78dtAwMPc9yH34rIuoT/U3kvWjdyBFY739zWWvuTA/C1QgceNOxcc9swDJfnGniYHENLrTVrdJXo8I1p/Vprd7UNXKvVFmeZPMQJhJ4oDhpjfmzROf25Jg8qPcXzCTxdaRUSeJMS+HbXFABUxpj1LqGliBwK0qparS50KeBNxwcwz1q7DNgJXHaJtJxLPCpd8VxGeRrvtbdnAxeCmVKmFZEX3q5LiMjpogMDJ7zANp3yTxQYeNzrUUvRD9OSQYs3WWt3FPC4dFuQpURkf0FgNQr8NZgpVx6AA0GeArbrVtAB4OeZT+OppEG/r9V7mjaui2fQSVUqlVl6MS3j0f58MU1vIgRFEY2zqH6fUVn8rIuFvnBabZwpHwbupMmn9Tea4mnWE0XRgqCbFIbhIj3YihOQ68ADrYZqCTg2rYw+iL8b0Lapk/dSpUqVKhV0v/4HoRHK8LGKBEoAAAAASUVORK5CYII="
+    />
+  </svg>
+);
+
+export default Coin;
