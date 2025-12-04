@@ -5,7 +5,7 @@ import { Resend } from 'resend';
 // Server-side Supabase client
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY! 
 );
 
 // Resend email client
@@ -62,9 +62,9 @@ export async function POST(request: NextRequest) {
     // Send welcome email
     try {
       await resend.emails.send({
-        from: 'Two Odds <onboarding@resend.dev>',
+        from: '2Odds <onboarding@resend.dev>',
         to: normalizedEmail,
-        subject: 'Welcome to Two Odds Waitlist!',
+        subject: 'Welcome to 2Odds Waitlist!',
         html: `
           <!DOCTYPE html>
           <html>
@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
 
                 <!-- Main Content Card -->
                 <div style="background-color: #01294A; border-radius: 16px; padding: 40px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);">
-                  <h1 style="color: #FFA500; text-align: center; font-size: 32px; margin: 0 0 20px 0; font-weight: 600;">Welcome Aboard! 🚀</h1>
+                  <h1 style="color: #FFA500; text-align: center; font-size: 32px; margin: 0 0 20px 0; font-weight: 600;">Welcome Aboard!</h1>
                   
                   <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
                     Thank you for joining the <strong style="color: #FFA500;">Two Odds</strong> exclusive waitlist! You're now part of an elite group getting early access to the future of smart betting.
