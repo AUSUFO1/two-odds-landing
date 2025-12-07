@@ -87,7 +87,6 @@ function BenefitCard({
         }}
       />
 
-      {/* ICON WITH ANIMATION - Matches Waitlist & Onboarding */}
       <motion.div
         whileHover={{ scale: 1.08 }}
         transition={{ duration: 0.45 }}
@@ -98,7 +97,6 @@ function BenefitCard({
         </div>
       </motion.div>
 
-      {/* TEXT - RESPONSIVE */}
       <h3
         className="font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight text-center sm:text-left relative z-10"
         style={{ opacity: 0.95 }}
@@ -106,7 +104,6 @@ function BenefitCard({
         {benefit.title}
       </h3>
 
-      {/* Bottom Right Glow */}
       <div
         className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-0 group-hover:opacity-80 transition-opacity duration-400"
         style={{ backgroundColor: 'rgba(255,165,0,0.04)' }}

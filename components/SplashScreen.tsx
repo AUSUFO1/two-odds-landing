@@ -32,22 +32,18 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         background: '#003C6E',
       }}
     >
-      {/* Logo at top - No animation, just static */}
       <div className="mb-12">
         <Logo className="w-32 h-32" />
       </div>
 
-      {/* Two Odds - With exact Figma dimensions and breathing animation */}
       <div className="flex items-center justify-center my-8 breathing-animation">
         <TwoOdds style={{ width: '359px', height: '89px' }} />
       </div>
 
-      {/* Coming Soon Text - Closer and larger */}
       <p className="text-3xl text-alice-blue font-semibold tracking-wider font-poppins mt-4">
         Coming Soon
       </p>
 
-      {/* Custom breathing animation */}
       <style jsx>{`
         @keyframes breathing {
           0%, 100% {

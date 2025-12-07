@@ -1,9 +1,4 @@
-// FILE LOCATION: app/icon.tsx
-// UPDATED VERSION - Fixed import path issues
-
 import { ImageResponse } from 'next/og';
-
-// Image metadata
 export const size = {
   width: 32,
   height: 32,
@@ -11,7 +6,6 @@ export const size = {
 
 export const contentType = 'image/png';
 
-// Icon generation - Logo SVG directly embedded
 export default function Icon() {
   return new ImageResponse(
     (
@@ -26,7 +20,6 @@ export default function Icon() {
           padding: '2px',
         }}
       >
-        {/* Logo SVG directly embedded - scaled to fit perfectly */}
         <svg
           width={18}
           height={32}

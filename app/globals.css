@@ -8,9 +8,6 @@
   --color-lavender: var(--lavender);
 }
 
-/* ------------------------------
-   BASE GLOBAL STYLES
-   ------------------------------ */
 
 :root {
   /* Brand Colors */
@@ -38,10 +35,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 600;
 }
-
-/* ------------------------------
-   CUSTOM COMPONENTS
-   ------------------------------ */
 
 /* PRIMARY BUTTON */
 .btn-primary {
