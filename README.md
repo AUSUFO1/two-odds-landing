@@ -29,7 +29,7 @@ A modern performance landing page for **TwoOdds**, built to showcase the brand, 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/twoodds-landing.git
+   git clone https://github.com/AUSUFO1/twoodds-landing.git
    ```
 2. **Install dependencies**
 
