@@ -73,7 +73,7 @@ export default function Hero() {
   if (!mounted) return null;
 
   return (
-    <section className="relative min-h-[55vh] sm:min-h-screen flex flex-col items-center justify-start sm:justify-center pt-15 sm:pt-0 overflow-hidden text-white">
+    <section className="relative min-h-[55vh] md:min-h-[65vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden text-white md:py-8">
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -93,7 +93,7 @@ export default function Hero() {
         <motion.div 
           variants={itemVariants} 
           transition={{ duration: 0.6 }} 
-          className="mb-4 sm:mb-6"
+          className="mb-3 mt-4 sm:mb-4 md:mb-6"
         >
           <div className="flex justify-center items-center gap-1 sm:gap-2 text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-poppins text-white">
             {Object.entries(timeLeft).map(([unit, value], index) => (
@@ -107,7 +107,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Logo */}
-        <motion.div variants={itemVariants} transition={{ duration: 0.6 }} className="mb-6 sm:mb-8 flex justify-center px-4">
+        <motion.div variants={itemVariants} transition={{ duration: 0.6 }} className="mb-4 sm:mb-6 md:mb-8 flex justify-center px-4">
           <motion.div
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: 'spring', stiffness: 300 }}
@@ -118,7 +118,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Badge */}
-        <motion.div variants={itemVariants} transition={{ duration: 0.6 }} className="mb-6 sm:mb-8 flex justify-center px-4">
+        <motion.div variants={itemVariants} transition={{ duration: 0.6 }} className="mb-4 sm:mb-6 md:mb-8 flex justify-center px-4">
           <motion.div
             className="inline-flex items-center gap-1.5 sm:gap-2 bg-dark-blue backdrop-blur-md px-4 sm:px-6 md:px-15 py-2 sm:py-3 rounded-full border border-dark-blue shadow-2xl hover:scale-105 transition-transform duration-300"
           >

@@ -15,7 +15,7 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-padding relative overflow-hidden bg-(--regal-navy)">
+    <section className="section-padding relative overflow-hidden bg-regal-navy">
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full blur-3xl bg-gold" />

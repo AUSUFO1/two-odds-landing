@@ -17,12 +17,12 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       setIsVisible(false);
       setTimeout(onComplete, 500); // Wait for fade out animation
     }, 3000);
-
+   
     return () => {
       clearTimeout(fadeTimer);
     };
   }, [onComplete]);
-
+ 
   return (
     <div
       className={`fixed inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-500 ${
@@ -37,7 +37,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       </div>
 
       <div className="flex items-center justify-center my-8 breathing-animation">
-        <TwoOdds style={{ width: '359px', height: '89px' }} />
+        <TwoOdds style={{ width: '300px', height: '89px' }} />
       </div>
 
       <p className="text-3xl text-alice-blue font-semibold tracking-wider font-poppins mt-4">
