@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import SplashScreen from '@/components/SplashScreen';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import OnboardingSteps from '@/components/OnboardingSteps';
+import OnboardingSlider from '@/components/OnboardingSlider';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import WaitlistSection from '@/components/WaitlistSection';
 import Footer from '@/components/Footer';
@@ -40,7 +40,7 @@ export default function Home() {
         <>
           <Navbar />
           <Hero />
-          <OnboardingSteps />
+          <OnboardingSlider />
           <WhyChooseUs />
           <WaitlistSection />
           <Footer />
