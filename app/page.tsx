@@ -35,7 +35,6 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Main Content - Only render after splash is complete */}
       {!showSplash && (
         <>
           <Navbar />

@@ -32,7 +32,8 @@ export default function Footer() {
               className="
                 text-white 
                 font-medium 
-                text-base
+                sm:text-md
+                text-sm
                 underline 
                 underline-offset-4 
                 decoration-white 
@@ -55,7 +56,7 @@ export default function Footer() {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          <p className="text-white text-base" style={{ opacity: 0.9 }}>
+          <p className="text-white text-sm" style={{ opacity: 0.9 }}>
             Gamble responsibly. <span className="font-semibold">18+ only.</span>
           </p>
         </motion.div>

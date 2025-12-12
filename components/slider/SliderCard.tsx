@@ -97,7 +97,7 @@ export default function SliderCard({
         style={{
           borderRadius: '20px',
           border: isActive
-            ? '2px solid rgba(255,165,0,0.3)'
+            ? '1px solid rgba(255,165,0,0.3)'
             : '1px solid rgba(171,178,250,0.12)',
         }}
       >
@@ -154,18 +154,6 @@ export default function SliderCard({
             {step.description}
           </p>
         </div>
-
-        {/* Pause Indicator */}
-        {isActive && isPaused && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute top-4 right-4 text-gold text-xs font-semibold"
-          >
-            PAUSED
-          </motion.div>
-        )}
-
         {/* Corner Decoration */}
         <div
           className="absolute bottom-0 right-0 w-20 h-20 rounded-tl-full opacity-0 group-hover:opacity-80 transition-opacity duration-400"

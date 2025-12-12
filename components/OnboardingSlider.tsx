@@ -70,7 +70,7 @@ export default function OnboardingSlider() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-5"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-regular text-white mb-3">
             Get Started in <span className="text-gold">5 Easy Steps</span>
@@ -109,7 +109,7 @@ export default function OnboardingSlider() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <p className="text-xl md:text-2xl font-regular text-white">
+          <p className="text-2xl mb-5 md:text-3xl font-extralight text-white">
             Begin Your Winning Streak
           </p>
         </motion.div>
