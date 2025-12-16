@@ -22,7 +22,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       clearTimeout(fadeTimer);
     };
   }, [onComplete]);
- 
+  
   return (
     <div
       className={`fixed inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-500 ${
@@ -40,9 +40,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         <TwoOdds style={{ width: '300px', height: '89px' }} />
       </div>
 
-      <p className="text-3xl text-alice-blue font-semibold tracking-wider font-poppins mt-4">
+      <h1 className="text-4xl md:text-5xl font-normal  mt-4">
         Coming Soon
-      </p>
+      </h1>
 
       <style jsx>{`
         @keyframes breathing {

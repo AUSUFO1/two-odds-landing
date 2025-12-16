@@ -23,18 +23,27 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--regal-navy);
-  color: white;
-  font-family: var(--font-poppins), sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    background-color: var(--regal-navy);
+    color: white;
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-noyh), system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 600;
-}
+nav a {
+    font-family: var(--font-noyh), system-ui, sans-serif;
+    font-weight: 500;
+  }
 
 /* PRIMARY BUTTON */
 .btn-primary {

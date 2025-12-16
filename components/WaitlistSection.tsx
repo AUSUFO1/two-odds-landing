@@ -72,7 +72,7 @@ export default function WaitlistSection() {
         </div>
 
         {/* Title */}
-        <h2 className="text-center text-white text-xl md:text-2xl font-bold mb-2 md:mb-3 relative z-10">
+        <h2 className="text-center text-white text-2xl md:text-3xl font-bold mb-2 md:mb-3 relative z-10">
           Join the <span className="text-gold">Exclusive</span> Waitlist
         </h2>
 

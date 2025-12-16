@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
+import { noyh } from './font';
 import './globals.css';
 
 const poppins = Poppins({
@@ -50,14 +51,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
- 
 };
 
 function ClientBody({ children }: { children: React.ReactNode }) {
   return (
-    <body 
-      suppressHydrationWarning 
-      className="font-poppins antialiased pt-15 md:pt-20 lg:pt-15"
+    <body
+      suppressHydrationWarning
+      className="antialiased pt-15 md:pt-20 lg:pt-15"
     >
       {children}
     </body>
@@ -66,7 +66,11 @@ function ClientBody({ children }: { children: React.ReactNode }) {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${poppins.variable} ${noyh.variable} scroll-smooth`}
+    >
       <ClientBody>{children}</ClientBody>
     </html>
   );

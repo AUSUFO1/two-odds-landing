@@ -4,7 +4,7 @@ const Security = (props) => (
     width={51}
     height={51}
     viewBox="0 0 51 51"
-    fill="none"
+    fill="none]"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}

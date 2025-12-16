@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 import Trophy from '@/public/icons/trophy';
 import Security from '@/public/icons/security';
 import Support from '@/public/icons/support';
@@ -14,100 +16,105 @@ const benefits = [
 ];
 
 export default function WhyChooseUs() {
-  return (
-    <section className="section-padding relative overflow-hidden bg-regal-navy">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 rounded-full blur-3xl bg-gold" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full blur-3xl bg-lavender" />
-      </div>
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-      <div className="container-custom relative">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-5 md:mb-6 lg:mb-7"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3 md:mb-4">
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
+  // Card 1 height growth
+  const firstCardHeight = useTransform(
+    scrollYProgress,
+    [0, 0.22, 0.25],
+    ['150px', '200px', '253px']
+  );
+
+  // Scale for first card content (icon + text)
+  const contentScale = useTransform(scrollYProgress, [0, 0.22, 0.25], [0.85, 0.95, 1]);
+
+  // Cards 2–4 reveal together
+  const secondaryOpacity = useTransform(scrollYProgress, [0.28, 0.38], [0, 1]);
+  const secondaryY = useTransform(scrollYProgress, [0.28, 0.38], [24, 0]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative bg-regal-navy"
+      style={{ height: '300vh' }}
+    >
+<div className="sticky top-0 flex flex-col items-center justify-center py-16 md:py-24 container-custom">
+        {/* ===== HEADER ===== */}
+        <div className="text-center mb-8 px-4">
+          <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
             Why Choose <span className="text-gold">Us?</span>
           </h2>
 
-          <p className="text-gray font-light text-base md:text-lg max-w-2xl mx-auto px-4">
+          <p className="text-gray font-light text-base md:text-lg max-w-2xl mx-auto text-center">
             Experience the difference with our premium platform features.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Benefit Cards */}
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6">
-          {benefits.map((benefit, index) => (
-            <BenefitCard key={benefit.title} benefit={benefit} index={index} />
-          ))}
+        {/* ===== CARDS ===== */}
+        <div className="w-full max-w-4xl flex flex-col gap-6 mt-4 px-4 items-center">
+          {/* CARD 1 */}
+          <motion.div
+            style={{ height: firstCardHeight }}
+            className="
+              relative
+              bg-dark-blue border border-lavender/20
+              rounded-[36px]
+              flex flex-col items-center justify-center
+              px-6 md:px-8
+              gap-4 md:gap-6
+              w-full
+            "
+          >
+            <motion.div
+              style={{ scale: contentScale }}
+              className="flex flex-col items-center justify-center gap-4"
+            >
+              <div className="flex items-center justify-center bg-[#0D121F] rounded-full w-16 h-16 md:w-20 md:h-20 shrink-0">
+                <Trophy />
+              </div>
+
+              <p className="font-semibold text-white text-xl md:text-3xl leading-tight text-center">
+                Best Odds Guaranteed
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* CARDS 2–4 (APPEAR TOGETHER) */}
+          {benefits.slice(1).map((benefit) => {
+            const Icon = benefit.icon;
+
+            return (
+              <motion.div
+                key={benefit.title}
+                style={{ opacity: secondaryOpacity, y: secondaryY }}
+                className="
+                  relative
+                  bg-dark-blue border border-lavender/20
+                  rounded-[36px]
+                  flex flex-col items-center justify-center
+                  px-6 md:px-8
+                  py-6 md:py-8
+                  gap-4 md:gap-6
+                  w-full
+                "
+              >
+                <div className="flex items-center justify-center bg-[#0D121F] rounded-full w-16 h-16 md:w-20 md:h-20 shrink-0">
+                  <Icon />
+                </div>
+
+                <p className="font-semibold text-white text-xl md:text-3xl leading-tight text-center">
+                  {benefit.title}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
-  );
-}
-
-function BenefitCard({
-  benefit,
-  index,
-}: {
-  benefit: typeof benefits[0];
-  index: number;
-}) {
-  const Icon = benefit.icon;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.15, duration: 0.6 }}
-      whileHover={{ scale: 1.03 }}
-      className="
-        relative group
-        bg-dark-blue border border-lavender/20
-        rounded-2xl sm:rounded-3xl md:rounded-[36px]
-        w-full max-w-[800px]
-        flex flex-col sm:flex-row items-center justify-center
-        px-4 sm:px-6 md:px-8
-        py-6 sm:py-7 md:py-8
-        gap-4 sm:gap-6 md:gap-8
-      "
-    >
-      {/* Hover Glow Layer */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-400 rounded-2xl sm:rounded-3xl md:rounded-[36px]"
-        style={{
-          background:
-            'linear-gradient(135deg, rgba(255,165,0,0.03), rgba(171,178,250,0.03))',
-        }}
-      />
-
-      <motion.div
-        whileHover={{ scale: 1.08 }}
-        transition={{ duration: 0.45 }}
-        className="flex items-center justify-center bg-[#0D121F] rounded-full w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 shrink-0 relative z-10"
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Icon />
-        </div>
-      </motion.div>
-
-      <h3
-        className="font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight text-center sm:text-left relative z-10"
-        style={{ opacity: 0.95 }}
-      >
-        {benefit.title}
-      </h3>
-
-      <div
-        className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-0 group-hover:opacity-80 transition-opacity duration-400"
-        style={{ backgroundColor: 'rgba(255,165,0,0.04)' }}
-      />
-    </motion.div>
   );
 }

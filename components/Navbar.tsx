@@ -47,7 +47,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 + 0.12 }}
-                  className="text-white hover:text-gold transition-colors font-medium font-poppins text-sm relative group"
+                  className="text-white hover:text-gold transition-colors font  text-lg md:text-2xl lg:text-2xl relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange transition-all duration-300 group-hover:w-full" />
