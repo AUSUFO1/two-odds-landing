@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
 <div className="sticky top-0 flex flex-col items-center justify-center py-16 md:py-24 container-custom">
         {/* ===== HEADER ===== */}
         <div className="text-center mb-8 px-4">
-          <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Why Choose <span className="text-gold">Us?</span>
           </h2>
 
